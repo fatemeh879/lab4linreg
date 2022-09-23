@@ -10,7 +10,7 @@
 #' @field varianceregcoe matrix. 
 #' @field tvalues matrix. 
 #' @field pvalue matrix. 
-#' @field formula character. 
+#' @field formula A formula object like x ~ y. 
 #' @field data character. 
 #' @field star character. 
 #'
