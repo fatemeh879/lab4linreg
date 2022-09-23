@@ -4,32 +4,32 @@
 \name{linreg-class}
 \alias{linreg-class}
 \alias{linreg}
-\title{Title}
+\title{A Reference Class to represent a linear model.}
 \description{
-Title
+A Reference Class to represent a linear model.
 }
 \section{Fields}{
 
 \describe{
-\item{\code{coefficients}}{matrix.}
+\item{\code{coefficients}}{Unknown parameters that describe the relationship between X and Y.}
 
-\item{\code{fittedvalues}}{matrix.}
+\item{\code{fittedvalues}}{The predicted values of Y.}
 
-\item{\code{residuals}}{matrix.}
+\item{\code{residuals}}{difference between fitted values and Y.}
 
-\item{\code{df}}{numeric.}
+\item{\code{df}}{Difference between n the number of observations and p is the number of parameters in the model.}
 
-\item{\code{residualvariance}}{numeric.}
+\item{\code{residualvariance}}{Variance of residuals.}
 
-\item{\code{varianceregcoe}}{matrix.}
+\item{\code{varianceregcoe}}{Variance of Coefficients.}
 
-\item{\code{tvalues}}{matrix.}
+\item{\code{tvalues}}{t-values of Coefficients.}
 
-\item{\code{pvalue}}{matrix.}
+\item{\code{pvalue}}{P-values of Coefficients.}
 
-\item{\code{formula}}{character.}
+\item{\code{formula}}{A formula object like x ~ y.}
 
-\item{\code{data}}{character.}
+\item{\code{data}}{A data frame which contains the formula variables.}
 
 \item{\code{star}}{character.}
 }}
