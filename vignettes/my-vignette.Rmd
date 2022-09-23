@@ -103,4 +103,6 @@ summary= function(){
   cat(paste("\nResidual standard error: ", sqrt(residualvariance), " on ", df, " degrees of freedom", sep = ""))
 }
 )
-´´´
+
+
+```
