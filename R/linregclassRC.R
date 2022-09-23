@@ -1,6 +1,6 @@
 
 
-#' Title
+#'  A Reference Class to represent a linear model.
 #'
 #' @field coefficients matrix. 
 #' @field fittedvalues matrix. 
