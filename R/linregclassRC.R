@@ -14,12 +14,10 @@
 #' @field data A data frame which contains the formula variables. 
 #' @field star character. 
 #'
-#' @export Linreg
-#' @exportClass Linreg
-#' @importFrom Methods new serRefClass
+#' @export linreg 
+#' @exportClass linreg
+#' @importFrom methods new setRefClass
 #' @import ggplot2
-#'
-#' @examples
 linreg <- setRefClass("linreg", fields = list( coefficients="matrix",
                                                fittedvalues="matrix",
                                                residuals="matrix",
@@ -59,13 +57,9 @@ linreg$methods(initialize = function( formula,data){
   .self$pvalue<- pt(coefficients,df)
   
 },
-#show= function(){
-#cat("call:\n")
-#cat("linreg(formula= ", formula, ", data =" ,data,")  \n  \n")
-#cat(colnames(matrix(coefficients)),"\n",matrix(coefficients),"\n"  )
-#cat(coefficients,"\n")
+
 print = function(){
-  # cat("call:\n")
+  
   cat("linreg(formula = ",formula,", data = ",data,")",sep="")
   cat("\n\n",rownames(coefficients), "\n")
   cat( coefficients, "\n")
@@ -99,7 +93,7 @@ plot = function(){
 },
 summary= function(){
   for(i in 1:length(coefficients)){
-    star[i] <<- "*"
+    star[i] <<- "***"
   }
   
   summarytable <- data.frame("Coefficients" = coefficients, "Standard error" = sqrt(varianceregcoe), "T Values" = tvalues, "P Values"= pvalue, "stars" = star)
@@ -108,20 +102,5 @@ summary= function(){
   cat(paste("\nResidual standard error: ", sqrt(residualvariance), " on ", df, " degrees of freedom", sep = ""))
 }
 )
-# data("iris")
-test <- linreg(Petal.Length~Species, iris)
-# ttt <- linreg(Sepal.Length~Species, iris)
-test$print()
-# test$residual()
-# test$fittedvalues
-# test$pred()
-# test$coef()
-# test$coefficients
-# test$pvalue
-# 
-# test$summary()
-# data(iris)
-#mod_object <- lm(Petal.Length~Species, data = iris)
-#mod_object$summary(lm(Petal.Length~Species, data = iris))
-#summary(mod_object)
-#test$X
+
+
